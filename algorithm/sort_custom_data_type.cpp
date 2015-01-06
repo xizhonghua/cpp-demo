@@ -53,18 +53,18 @@ int main() {
 }
 
 /// output
-sort by name using < operator
-Name = Amay age = 27
-Name = Bob age = 18
-Name = John age = 35
-----------------------------------------
-sort by age using lambda
-Name = Bob age = 18
-Name = Amay age = 27
-Name = John age = 35
-----------------------------------------
-sort by name DESC using comparison function
-Name = John age = 35
-Name = Bob age = 18
-Name = Amay age = 27
-----------------------------------------
+// sort by name using < operator
+// Name = Amay age = 27
+// Name = Bob age = 18
+// Name = John age = 35
+// ----------------------------------------
+// sort by age using lambda
+// Name = Bob age = 18
+// Name = Amay age = 27
+// Name = John age = 35
+// ----------------------------------------
+// sort by name DESC using comparison function
+// Name = John age = 35
+// Name = Bob age = 18
+// Name = Amay age = 27
+// ----------------------------------------
