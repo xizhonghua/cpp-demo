@@ -1,5 +1,25 @@
 ### [Disjoint Forests](./DisjointForests.cpp)
+* Interface
+```C++
+template<typename T>
+class DisjointForests
+{
+public:
+    DisjointForests();
+    ~DisjointForests();
 
+    void makeSet(const T& x);
+    void unionSets(const T& a, const T& b);
+    bool intersects(const T& a, const T& b);
+    void print(ostream& os);
+private:
+    DisjointSet<T>* findSet(const T& x);
+    DisjointSet<T>* findSet(DisjointSet<T>* s);
+    unordered_map<T, DisjointSet<T>*> _map;
+};
+```
+
+* Test
 ```C++
 int main(int argc, char** argv)
 {
