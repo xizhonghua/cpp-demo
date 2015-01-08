@@ -47,13 +47,7 @@ public:
             return; 
         }
         _map[x] = new DisjointSet<T>(x);        
-    }
-
-    DisjointSet<T>* findSet(const T& x) {
-        if (!_map.count(x)) return nullptr;
-        DisjointSet<T>* s = _map[x];
-        return this->findSet(s);
-    }
+    }    
 
     void unionSets(const T& a, const T& b) {
         DisjointSet<T>* sa = this->findSet(a);
@@ -73,12 +67,25 @@ public:
         }
     }
 
+    bool intersects(const T& a, const T& b) {
+        DisjointSet<T>* sa = this->findSet(a);
+        DisjointSet<T>* sb = this->findSet(b);
+
+        return sa->getAncestor() == sb->getAncestor();
+    }
+
     void print(ostream& os) {
         for (auto kv : _map) 
             os << "key = " << kv.first << " parent.key = " << kv.second->getParent()->getElement() << " ancestor.key = " << kv.second->getAncestor()->getElement() << endl;
         cout << string(40, '-') << endl;
     }
 private:
+    DisjointSet<T>* findSet(const T& x) {
+        if (!_map.count(x)) return nullptr;
+        DisjointSet<T>* s = _map[x];
+        return this->findSet(s);
+    }
+
     DisjointSet<T>* findSet(DisjointSet<T>* s) {        
         if (s->getParent() != s)
             s->setParent(this->findSet(s->getParent()));        
