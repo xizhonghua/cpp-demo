@@ -57,6 +57,7 @@ int main(int argc, char** argv)
 }
 ```
 
+* Output
 ```
 key c alread exists!
 c and h are already in the same set!
