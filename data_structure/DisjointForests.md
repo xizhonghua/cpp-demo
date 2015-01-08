@@ -1,5 +1,6 @@
-### [Disjoint Forests](./DisjointForests.cpp)
-* Interface
+## [Disjoint Forests](./DisjointForests.cpp)
+### Interface
+
 ```C++
 template<typename T>
 class DisjointForests
@@ -19,7 +20,10 @@ private:
 };
 ```
 
-* Test
+### Implmentation
+See code [DisjointForests.cpp](./DisjointForests.cpp)
+
+### Test
 ```C++
 int main(int argc, char** argv)
 {
@@ -57,7 +61,8 @@ int main(int argc, char** argv)
 }
 ```
 
-* Output
+### Output
+
 ```
 key c alread exists!
 c and h are already in the same set!
