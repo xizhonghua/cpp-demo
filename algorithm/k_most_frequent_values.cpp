@@ -6,41 +6,26 @@
 
 using namespace std;
 
-/*
- * fin k most frequent values in input vector
- */
-vector<int> most_k_integers(const vector<int>& input, const int k)
+template<typename T>
+vector<T> k_most_freq_elements(const vector<T>& input, const int k)
 {
-	unordered_map<int,int> m;
-	for(auto num : input)
-		m[num]++;
+	unordered_map<T, int> m;
+	for(const auto &v : input)
+		m[v]++;
 		
-	priority_queue<pair<int,int>> q;
+	priority_queue<pair<int,T>> q;
 	
-	////////////////////////////////////////////////////
-	// option 1, use constructor ~ 0.38s
-	////////////////////////////////////////////////////
-	// vector<pair<int,int>> e;
-	// for(auto& kv : m)
-	// 	e.push_back(make_pair(kv.second, kv.first));
-	
-	// q = priority_queue<pair<int,int>>(e.begin(), e.end());
-	
-	////////////////////////////////////////////////////
-	// option 2, directly push ~ 0.36s
-	////////////////////////////////////////////////////
 	for(auto& kv : m)
 		q.push(make_pair(kv.second, kv.first));
-	////////////////////////////////////////////////////
 	
-	vector<int> output;
+	vector<T> result;
 	for(int i=0;i<min(k, (int)m.size());i++)
 	{
-		output.push_back(q.top().second);
+		result.push_back(q.top().second);
 		q.pop();
 	}
 	
-	return output;
+	return result;
 }
 
 int main() {
@@ -57,7 +42,8 @@ int main() {
 	for(int k=1;k<7;k++)
 	{
 		clock_t s = clock(); 	                     
-		vector<int> output = most_k_integers(input, k);
+		vector<int> output;
+		output = k_most_freq_elements(input, k);
 		for(auto o : output)
 			cout<<o<<" ";
 		cout<<endl;
