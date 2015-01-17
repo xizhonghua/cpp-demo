@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/*
+ * fin k most frequent values in input vector
+ */
 vector<int> most_k_integers(const vector<int>& input, const int k)
 {
 	unordered_map<int,int> m;
