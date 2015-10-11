@@ -1,2 +1,5 @@
+.DS_Store
+.cproject
+.project
 build/*
 MeshsegBenchmark-1.0/*
