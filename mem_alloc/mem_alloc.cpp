@@ -21,7 +21,8 @@ int main(int argc, char** argv) {
   const int chunk_size = rate * 1.0 / alloc_per_sec; // byte/s
   const int max_sleep_time_us = 1e6 / alloc_per_sec;
 
-  cout<<"allocate mem at "<<chunk_size<<" bytes/ms for "<<last<<" s @ " <<alloc_per_sec << " calls/s" <<endl;
+  cout<<"allocate mem at "<<rate/1024.0/1024.0<<"MB/s for" <<last<<" s"<<endl;
+  cout<<chunk_size<<" bytes/call  @ " <<alloc_per_sec << " calls/s" <<endl;
 
   long long total_alloc = 0;
   for(int t=0; t<last; t++)
