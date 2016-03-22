@@ -7,6 +7,11 @@ Allocate and fill memory at `rate` (MB/s) for `last` seconds, call new `calls_pe
 Usage: ./mem_alloc rate (MB/s) [last=10] [calls_per_sec=1000]
 ```
 
+### Build
+```
+make
+```
+
 ### Example
 ```
 time ./mem_alloc 100 8 200
